@@ -1,0 +1,41 @@
+{
+  "name": "<%= name %>",
+  "version": "<%= version %>",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "cross-env NODE_ENV=test nyc mocha tests/",
+    "clean": "rimraf ./dist",
+    "build:cjs": "rollup -c config/rollup.config.js",
+    "build:esm": "rollup -c config/rollup.config.esm.js",
+    "build:umd": "rollup -c config/rollup.config.umd.js",
+    "build": "npm run clean && npm run build:cjs && npm run build:esm && npm run build:umd"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.21.5",
+    "@babel/plugin-transform-runtime": "^7.21.4",
+    "@babel/preset-env": "^7.21.5",
+    "@babel/register": "^7.21.0",
+    "@babel/runtime": "^7.21.5",
+    "@babel/runtime-corejs3": "^7.21.5",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^24.1.0",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-terser": "^0.4.1",
+    "babel-plugin-istanbul": "^6.1.1",
+    "cross-env": "^7.0.3",
+    "es5-shim": "^4.6.7",
+    "expect.js": "^0.3.1",
+    "mocha": "^10.2.0",
+    "nyc": "^15.1.0",
+    "rollup": "^3.21.2"
+  }
+}

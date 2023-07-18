@@ -1,0 +1,17 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 定义两列布局 */
+  grid-gap: 10px; /* 设置布局项之间的间距 */
+  padding: 10px;
+}
+
+.grid-item {
+  display: flex;
+  background-color: #e0e0e0;
+  padding: 20px;
+  border-radius: 4px;
+  .grid-sub-item {
+    width: 100px;
+    background-color: #ffffff;
+  }
+}
